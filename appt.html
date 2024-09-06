@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        jennifer: "#121c84",
+                        submitGreen: '#4CAF50'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body class="bg-blue-50">
+
+
+    <!-- Nav begins -->
+    <div class="bg-gradient-to-r from-blue-200 via-blue-400 to-blue-500">
+        <h1 class="text-center text-white font-bold text-3xl py-4 hover:text-gray-800">Appointment Booking</h1>
+    </div>
+
+    <!-- ends here -->
+
+    
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Book Your Appointment</h2>
+        <form id="bookingForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Name -->
+            <div>
+                <label for="name" class="block font-semibold">Name*</label>
+                <input type="text" id="name" class="w-full p-2 border rounded" placeholder="Enter your name">
+                <span id="nameError" class="text-red-500 text-sm"></span>
+            </div>
+
+            <!-- Mobile Number -->
+            <div>
+                <label for="mobile" class="block font-semibold">Mobile Number* (11 digits)</label>
+                <input type="text" id="mobile" class="w-full p-2 border rounded" placeholder="Enter your mobile number">
+                <span id="mobileError" class="text-red-500 text-sm"></span>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email" class="block font-semibold">Email*</label>
+                <input type="email" id="email" class="w-full p-2 border rounded" placeholder="Enter your email">
+                <span id="emailError" class="text-red-500 text-sm"></span>
+            </div>
+
+            <!-- Date of Birth -->
+            <div>
+                <label for="dob" class="block font-semibold">Date of Birth*</label>
+                <input type="date" id="dob" class="w-full p-2 border rounded">
+                <span id="dobError" class="text-red-500 text-sm"></span>
+            </div>
+
+            <!-- Physician -->
+            <div>
+                <label for="physician" class="block font-semibold">Select Physician*</label>
+                <select id="physician" class="w-full p-2 border rounded">
+                    <option value="">-- Select a Physician --</option>
+                    <option value="Dr. John">Dr. Nosa</option>
+                    <option value="Dr. Smith">Dr. Emeka</option>
+                    <option value="Dr. Jane">Dr. Ramatu</option>
+                </select>
+                <span id="physicianError" class="text-red-500 text-sm"></span>
+            </div>
+
+            <!-- Date -->
+            <div>
+                <label for="date" class="block font-semibold">Date*</label>
+                <input type="date" id="date" class="w-full p-2 border rounded">
+                <span id="dateError" class="text-red-500 text-sm"></span>
+            </div>
+
+            <!-- Time -->
+            <div>
+                <label for="time" class="block font-semibold">Time*</label>
+                <input type="time" id="time" class="w-full p-2 border rounded">
+                <span id="timeError" class="text-red-500 text-sm"></span>
+            </div>
+
+            <!-- Additional Information (Full-width) -->
+            <div class="md:col-span-2">
+                <label for="comments" class="block font-semibold">Additional Information</label>
+                <textarea id="comments" class="w-full p-2 border rounded" placeholder="Add any additional info"></textarea>
+            </div>
+
+            <!-- Submit & Cancel Buttons (Full-width) -->
+            <div class="md:col-span-2 flex justify-between">
+                <button type="submit" class="bg-submitGreen text-white py-2 px-4 rounded hover:bg-lime-400">Submit</button>
+                <button type="button" id="cancelBtn" class="bg-cancelRed bg-red-600 text-white py-2 px-4 rounded hover:bg-rose-600">Cancel/Reschedule</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Receipt -->
+    <div id="receipt" class="hidden max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Appointment Receipt</h2>
+        <p><strong>Name:</strong> <span id="receiptName"></span></p>
+        <p><strong>Mobile:</strong> <span id="receiptMobile"></span></p>
+        <p><strong>Email:</strong> <span id="receiptEmail"></span></p>
+        <p><strong>Physician:</strong> <span id="receiptPhysician"></span></p>
+        <p><strong>Date:</strong> <span id="receiptDate"></span></p>
+        <p><strong>Time:</strong> <span id="receiptTime"></span></p>
+        <p><strong>Location:</strong> Novare Mall, Lugbe</p>
+        <p><strong>Duration:</strong> 45 minutes</p>
+        <p><strong>Additional Info:</strong> <span id="receiptComments"></span></p>
+    </div>
+
+
+
+
+
+
+
+
+
+  
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
